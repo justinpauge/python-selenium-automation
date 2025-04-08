@@ -1,7 +1,19 @@
-Feature: Test Scenarios for Search functionality
+Feature: Target search test cases
 
-  Scenario: User can search for a product on Target
-    Given Open Google page
-    When Input 'Car' into Search field
-    And Click on Search link
-    Then Product results for 'Car' are shown
+
+##Empty cart message
+  Scenario: User can verify cart is empty
+    Given Open target main page
+    When Click on Cart icon
+    Then Verify Empty cart message is shown
+
+
+## Verify log out to log in
+  Scenario: Logged out User can navigate to sign in page
+    Given Open target main page
+    When Click Sign in
+    Then Verify Sign in Form opens
+
+
+
+
