@@ -31,7 +31,7 @@ def verify_color(context):
     for color in colors[0:3]:
         sleep(5)
         color.click()
-        selected_color = context.driver.find_element(*SELECTED_COLOR).text[1]  # 'Color\nBlack'
+        selected_color = context.driver.find_element(*SELECTED_COLOR).text[6:]  # 'Color\nBlack'
         print('Current color', selected_color)
         #selected_color = selected_color.split('color\n39063-')[1] # remove 'Color\n' part, keep Black'
         sleep(3)

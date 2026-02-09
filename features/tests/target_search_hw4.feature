@@ -1,7 +1,7 @@
 Feature: Update Target search test cases and add Behave variables
 
 
-##Open Target Circle and verify 10 benefit cells
+##Open Target Circle and verify 2 storycards
   Scenario: User can open Target Circle with 2 storycards
     Given Open Target circle page
     Then Verify two storycards
