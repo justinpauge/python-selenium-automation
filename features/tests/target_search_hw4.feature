@@ -2,9 +2,9 @@ Feature: Update Target search test cases and add Behave variables
 
 
 ##Open Target Circle and verify 10 benefit cells
-  Scenario: User can open Target Circle with 10 benefit cells
+  Scenario: User can open Target Circle with 2 storycards
     Given Open Target circle page
-    Then Verify 10 or more benefit cells
+    Then Verify two storycards
 
 
 ## Add a Target product to cart And Verify it is there

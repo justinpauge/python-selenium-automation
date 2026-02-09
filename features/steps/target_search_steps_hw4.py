@@ -5,9 +5,9 @@ from time import sleep
 
 CART_ICON = (By.CSS_SELECTOR, 'a[data-test="@web/CartLink"]')
 CART_SUMMARY = (By.XPATH, "//div[./span[contains(text(), 'subtotal')]]")
-BENEFIT_CELL = (By.CSS_SELECTOR, '[class="cell-item-content"]')
+BENEFIT_CELL = (By.CSS_SELECTOR, '[class="sc-3e90527f-1 colamC storycard--text"')
 ADD_CART_BUTTON = (By.CSS_SELECTOR, '[id*="addToCartButtonOrTextIdFor"]')
-ADD_CART_BUTTON_2 = (By.CSS_SELECTOR, '[data-test="orderPickupButton"]')
+ADD_CART_BUTTON_2 = (By.CSS_SELECTOR, '[aria-label="Fulfillment"] [id*="addToCartButtonOrTextId')
 ADD_CART_BUTTON_3 = (By.CSS_SELECTOR, '[href="/cart"]')
 CART_ITEM_TITLE = (By.CSS_SELECTOR, "[data-test='cartItem-title']")
 
@@ -18,20 +18,20 @@ def open_cart(context):
     sleep(3)
 
 
-@then('Verify 10 or more benefit cells')
-def verify_benefit_cells(context):
-    actual_benefit_cells_len = context.driver.find_elements(*BENEFIT_CELL)
-    print(f'Benefit cells: {len(actual_benefit_cells_len)}')
-    assert len(actual_benefit_cells_len) >= 10, f'Benefit cells count {len(actual_benefit_cells_len)} should be greater or equal to 10'
+@then('Verify two storycards')
+def verify_storycards(context):
+    actual_storycards_len = context.driver.find_elements(*BENEFIT_CELL)
+    print(f'Storycards: {len(actual_storycards_len)}')
+    assert len(actual_storycards_len) == 2, f'Story cards count {len(actual_storycards_len)} should equal 2'
 
 
 @when('Add item to cart')
 def add_to_cart(context):
     sleep(10)
     context.driver.find_element(*ADD_CART_BUTTON).click()
-    sleep(3)
+    sleep(10)
     context.driver.find_element(*ADD_CART_BUTTON_2).click()
-    sleep(2)
+    sleep(5)
     context.driver.find_element(*ADD_CART_BUTTON_3).click()
 
 
